@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TTTVModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="TTTVEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="TTTVModel.sysdiagram" />
+    <EntitySet Name="TTTV__DetailProvinces" EntityType="TTTVModel.TTTV__DetailProvinces" />
+    <EntitySet Name="TTTV__Districts" EntityType="TTTVModel.TTTV__Districts" />
+    <EntitySet Name="TTTV__HostStatus" EntityType="TTTVModel.TTTV__HostStatus" />
+    <EntitySet Name="TTTV__Provinces" EntityType="TTTVModel.TTTV__Provinces" />
+    <EntitySet Name="TTTV__Roles" EntityType="TTTVModel.TTTV__Roles" />
+    <EntitySet Name="TTTV__UserInformation" EntityType="TTTVModel.TTTV__UserInformation" />
+    <EntitySet Name="TTTV__Users" EntityType="TTTVModel.TTTV__Users" />
+    <AssociationSet Name="FK_TTTV__DetailAddress_TTTV__Districts" Association="TTTVModel.FK_TTTV__DetailAddress_TTTV__Districts">
+      <End Role="TTTV__Districts" EntitySet="TTTV__Districts" />
+      <End Role="TTTV__DetailProvinces" EntitySet="TTTV__DetailProvinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__DetailAddress_TTTV__Provinces" Association="TTTVModel.FK_TTTV__DetailAddress_TTTV__Provinces">
+      <End Role="TTTV__Provinces" EntitySet="TTTV__Provinces" />
+      <End Role="TTTV__DetailProvinces" EntitySet="TTTV__DetailProvinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__Districts_TTTV__Provinces" Association="TTTVModel.FK_TTTV__Districts_TTTV__Provinces">
+      <End Role="TTTV__Provinces" EntitySet="TTTV__Provinces" />
+      <End Role="TTTV__Districts" EntitySet="TTTV__Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__Users_TTTV__Roles" Association="TTTVModel.FK_TTTV__Users_TTTV__Roles">
+      <End Role="TTTV__Roles" EntitySet="TTTV__Roles" />
+      <End Role="TTTV__Users" EntitySet="TTTV__Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__UserInformation_TTTV__Users" Association="TTTVModel.FK_TTTV__UserInformation_TTTV__Users">
+      <End Role="TTTV__Users" EntitySet="TTTV__Users" />
+      <End Role="TTTV__UserInformation" EntitySet="TTTV__UserInformation" />
+    </AssociationSet>
+    <EntitySet Name="TTTV__GiayTo" EntityType="TTTVModel.TTTV__GiayTo" />
+    <EntitySet Name="TTTV__LiDo" EntityType="TTTVModel.TTTV__LiDo" />
+    <EntitySet Name="TTTV__QuocTich" EntityType="TTTVModel.TTTV__QuocTich" />
+    <EntitySet Name="TTTV__Status" EntityType="TTTVModel.TTTV__Status" />
+    <EntitySet Name="TTTV__TamTru" EntityType="TTTVModel.TTTV__TamTru" />
+    <EntitySet Name="TTTV__Type" EntityType="TTTVModel.TTTV__Type" />
+    <AssociationSet Name="FK_TTTV__TamTru_TTTV__GiayTo" Association="TTTVModel.FK_TTTV__TamTru_TTTV__GiayTo">
+      <End Role="TTTV__GiayTo" EntitySet="TTTV__GiayTo" />
+      <End Role="TTTV__TamTru" EntitySet="TTTV__TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__TamTru_TTTV__LiDo" Association="TTTVModel.FK_TTTV__TamTru_TTTV__LiDo">
+      <End Role="TTTV__LiDo" EntitySet="TTTV__LiDo" />
+      <End Role="TTTV__TamTru" EntitySet="TTTV__TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__TamTru_TTTV__QuocTich" Association="TTTVModel.FK_TTTV__TamTru_TTTV__QuocTich">
+      <End Role="TTTV__QuocTich" EntitySet="TTTV__QuocTich" />
+      <End Role="TTTV__TamTru" EntitySet="TTTV__TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__TamTru_TTTV__Status" Association="TTTVModel.FK_TTTV__TamTru_TTTV__Status">
+      <End Role="TTTV__Status" EntitySet="TTTV__Status" />
+      <End Role="TTTV__TamTru" EntitySet="TTTV__TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__TamTru_TTTV__Type" Association="TTTVModel.FK_TTTV__TamTru_TTTV__Type">
+      <End Role="TTTV__Type" EntitySet="TTTV__Type" />
+      <End Role="TTTV__TamTru" EntitySet="TTTV__TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV__TamTru_TTTV__Users" Association="TTTVModel.FK_TTTV__TamTru_TTTV__Users">
+      <End Role="TTTV__Users" EntitySet="TTTV__Users" />
+      <End Role="TTTV__TamTru" EntitySet="TTTV__TamTru" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TTTV__DetailProvinces">
+    <Key>
+      <PropertyRef Name="DetailID" />
+      <PropertyRef Name="DistrictID" />
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="DetailID" Type="Int32" Nullable="false" />
+    <Property Name="DistrictID" Type="Int32" Nullable="false" />
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="DetailName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TTTV__Districts" Relationship="TTTVModel.FK_TTTV__DetailAddress_TTTV__Districts" FromRole="TTTV__DetailProvinces" ToRole="TTTV__Districts" />
+    <NavigationProperty Name="TTTV__Provinces" Relationship="TTTVModel.FK_TTTV__DetailAddress_TTTV__Provinces" FromRole="TTTV__DetailProvinces" ToRole="TTTV__Provinces" />
+  </EntityType>
+  <EntityType Name="TTTV__Districts">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="DistrictID" Type="Int32" Nullable="false" />
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="DistrictName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TTTV__DetailProvinces" Relationship="TTTVModel.FK_TTTV__DetailAddress_TTTV__Districts" FromRole="TTTV__Districts" ToRole="TTTV__DetailProvinces" />
+    <NavigationProperty Name="TTTV__Provinces" Relationship="TTTVModel.FK_TTTV__Districts_TTTV__Provinces" FromRole="TTTV__Districts" ToRole="TTTV__Provinces" />
+  </EntityType>
+  <EntityType Name="TTTV__HostStatus">
+    <Key>
+      <PropertyRef Name="StatusKey" />
+    </Key>
+    <Property Name="StatusKey" Type="Int32" Nullable="false" />
+    <Property Name="StatusDescription" Type="Boolean" />
+    <Property Name="StatusLog" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="TTTV__Provinces">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="ProvinceName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TTTV__DetailProvinces" Relationship="TTTVModel.FK_TTTV__DetailAddress_TTTV__Provinces" FromRole="TTTV__Provinces" ToRole="TTTV__DetailProvinces" />
+    <NavigationProperty Name="TTTV__Districts" Relationship="TTTVModel.FK_TTTV__Districts_TTTV__Provinces" FromRole="TTTV__Provinces" ToRole="TTTV__Districts" />
+  </EntityType>
+  <EntityType Name="TTTV__Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="RoleDescription" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TTTV__Users" Relationship="TTTVModel.FK_TTTV__Users_TTTV__Roles" FromRole="TTTV__Roles" ToRole="TTTV__Users" />
+  </EntityType>
+  <EntityType Name="TTTV__UserInformation">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="ProvinceID" />
+      <PropertyRef Name="ProvinceDetailID" />
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="BusinessCode" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+    <Property Name="ProvinceDetailID" Type="Int32" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PersonCode" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="SubAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="DistrictID" Type="Int32" Nullable="false" />
+    <Property Name="UserFullName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Age" Type="Int32" />
+    <NavigationProperty Name="TTTV__Users" Relationship="TTTVModel.FK_TTTV__UserInformation_TTTV__Users" FromRole="TTTV__UserInformation" ToRole="TTTV__Users" />
+  </EntityType>
+  <EntityType Name="TTTV__Users">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ForgotPassQuestion" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ForgotPassAnswer" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="TTTV__Roles" Relationship="TTTVModel.FK_TTTV__Users_TTTV__Roles" FromRole="TTTV__Users" ToRole="TTTV__Roles" />
+    <NavigationProperty Name="TTTV__UserInformation" Relationship="TTTVModel.FK_TTTV__UserInformation_TTTV__Users" FromRole="TTTV__Users" ToRole="TTTV__UserInformation" />
+    <NavigationProperty Name="TTTV__TamTru" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__Users" FromRole="TTTV__Users" ToRole="TTTV__TamTru" />
+  </EntityType>
+  <Association Name="FK_TTTV__DetailAddress_TTTV__Districts">
+    <End Role="TTTV__Districts" Type="TTTVModel.TTTV__Districts" Multiplicity="1" />
+    <End Role="TTTV__DetailProvinces" Type="TTTVModel.TTTV__DetailProvinces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Districts">
+        <PropertyRef Name="DistrictID" />
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="TTTV__DetailProvinces">
+        <PropertyRef Name="DistrictID" />
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__DetailAddress_TTTV__Provinces">
+    <End Role="TTTV__Provinces" Type="TTTVModel.TTTV__Provinces" Multiplicity="1" />
+    <End Role="TTTV__DetailProvinces" Type="TTTVModel.TTTV__DetailProvinces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Provinces">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="TTTV__DetailProvinces">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__Districts_TTTV__Provinces">
+    <End Role="TTTV__Provinces" Type="TTTVModel.TTTV__Provinces" Multiplicity="1" />
+    <End Role="TTTV__Districts" Type="TTTVModel.TTTV__Districts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Provinces">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="TTTV__Districts">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__Users_TTTV__Roles">
+    <End Role="TTTV__Roles" Type="TTTVModel.TTTV__Roles" Multiplicity="0..1" />
+    <End Role="TTTV__Users" Type="TTTVModel.TTTV__Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="TTTV__Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__UserInformation_TTTV__Users">
+    <End Role="TTTV__Users" Type="TTTVModel.TTTV__Users" Multiplicity="1" />
+    <End Role="TTTV__UserInformation" Type="TTTVModel.TTTV__UserInformation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Users">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="TTTV__UserInformation">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TTTV__GiayTo">
+    <Key>
+      <PropertyRef Name="ID_GiayTo" />
+    </Key>
+    <Property Type="Int32" Name="ID_GiayTo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="GiayTo" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TTTV__TamTru" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__GiayTo" FromRole="TTTV__GiayTo" ToRole="TTTV__TamTru" />
+  </EntityType>
+  <EntityType Name="TTTV__LiDo">
+    <Key>
+      <PropertyRef Name="ID_LiDo" />
+    </Key>
+    <Property Type="Int32" Name="ID_LiDo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="LiDo" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TTTV__TamTru" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__LiDo" FromRole="TTTV__LiDo" ToRole="TTTV__TamTru" />
+  </EntityType>
+  <EntityType Name="TTTV__QuocTich">
+    <Key>
+      <PropertyRef Name="ID_QuocTich" />
+    </Key>
+    <Property Type="Int32" Name="ID_QuocTich" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="QuocTich" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TTTV__TamTru" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__QuocTich" FromRole="TTTV__QuocTich" ToRole="TTTV__TamTru" />
+  </EntityType>
+  <EntityType Name="TTTV__Status">
+    <Key>
+      <PropertyRef Name="ID_Status" />
+    </Key>
+    <Property Type="Int32" Name="ID_Status" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Status" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TTTV__TamTru" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__Status" FromRole="TTTV__Status" ToRole="TTTV__TamTru" />
+  </EntityType>
+  <EntityType Name="TTTV__TamTru">
+    <Key>
+      <PropertyRef Name="ID_TamTru" />
+    </Key>
+    <Property Type="Int32" Name="ID_TamTru" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ID_Type" />
+    <Property Type="Int32" Name="ID_Status" />
+    <Property Type="Int32" Name="ID_GiayTo" />
+    <Property Type="Int32" Name="ID_LiDo" />
+    <Property Type="Int32" Name="ID_QuocTich" />
+    <Property Type="String" Name="TT_FullName" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TT_DiaChiThuongTru" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="TT_NgayDen" />
+    <Property Type="DateTime" Name="TT_NgayDi" />
+    <Property Type="String" Name="TT_DiaChiTamTru" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TT_Room" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TT_GiayTo" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TaiKhoanDangKi" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TT_LiDoKhac" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ProvinceID" />
+    <Property Type="Int32" Name="DistrictID" />
+    <Property Type="Int32" Name="DetailProvinceID" />
+    <NavigationProperty Name="TTTV__GiayTo" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__GiayTo" FromRole="TTTV__TamTru" ToRole="TTTV__GiayTo" />
+    <NavigationProperty Name="TTTV__LiDo" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__LiDo" FromRole="TTTV__TamTru" ToRole="TTTV__LiDo" />
+    <NavigationProperty Name="TTTV__QuocTich" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__QuocTich" FromRole="TTTV__TamTru" ToRole="TTTV__QuocTich" />
+    <NavigationProperty Name="TTTV__Status" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__Status" FromRole="TTTV__TamTru" ToRole="TTTV__Status" />
+    <NavigationProperty Name="TTTV__Type" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__Type" FromRole="TTTV__TamTru" ToRole="TTTV__Type" />
+    <NavigationProperty Name="TTTV__Users" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__Users" FromRole="TTTV__TamTru" ToRole="TTTV__Users" />
+  </EntityType>
+  <EntityType Name="TTTV__Type">
+    <Key>
+      <PropertyRef Name="ID_Type" />
+    </Key>
+    <Property Type="Int32" Name="ID_Type" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Type" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TTTV__TamTru" Relationship="TTTVModel.FK_TTTV__TamTru_TTTV__Type" FromRole="TTTV__Type" ToRole="TTTV__TamTru" />
+  </EntityType>
+  <Association Name="FK_TTTV__TamTru_TTTV__GiayTo">
+    <End Type="TTTVModel.TTTV__GiayTo" Role="TTTV__GiayTo" Multiplicity="0..1" />
+    <End Type="TTTVModel.TTTV__TamTru" Role="TTTV__TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__GiayTo">
+        <PropertyRef Name="ID_GiayTo" />
+      </Principal>
+      <Dependent Role="TTTV__TamTru">
+        <PropertyRef Name="ID_GiayTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__TamTru_TTTV__LiDo">
+    <End Type="TTTVModel.TTTV__LiDo" Role="TTTV__LiDo" Multiplicity="0..1" />
+    <End Type="TTTVModel.TTTV__TamTru" Role="TTTV__TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__LiDo">
+        <PropertyRef Name="ID_LiDo" />
+      </Principal>
+      <Dependent Role="TTTV__TamTru">
+        <PropertyRef Name="ID_LiDo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__TamTru_TTTV__QuocTich">
+    <End Type="TTTVModel.TTTV__QuocTich" Role="TTTV__QuocTich" Multiplicity="0..1" />
+    <End Type="TTTVModel.TTTV__TamTru" Role="TTTV__TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__QuocTich">
+        <PropertyRef Name="ID_QuocTich" />
+      </Principal>
+      <Dependent Role="TTTV__TamTru">
+        <PropertyRef Name="ID_QuocTich" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__TamTru_TTTV__Status">
+    <End Type="TTTVModel.TTTV__Status" Role="TTTV__Status" Multiplicity="0..1" />
+    <End Type="TTTVModel.TTTV__TamTru" Role="TTTV__TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Status">
+        <PropertyRef Name="ID_Status" />
+      </Principal>
+      <Dependent Role="TTTV__TamTru">
+        <PropertyRef Name="ID_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__TamTru_TTTV__Type">
+    <End Type="TTTVModel.TTTV__Type" Role="TTTV__Type" Multiplicity="0..1" />
+    <End Type="TTTVModel.TTTV__TamTru" Role="TTTV__TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Type">
+        <PropertyRef Name="ID_Type" />
+      </Principal>
+      <Dependent Role="TTTV__TamTru">
+        <PropertyRef Name="ID_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV__TamTru_TTTV__Users">
+    <End Type="TTTVModel.TTTV__Users" Role="TTTV__Users" Multiplicity="0..1" />
+    <End Type="TTTVModel.TTTV__TamTru" Role="TTTV__TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV__Users">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="TTTV__TamTru">
+        <PropertyRef Name="TaiKhoanDangKi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TTTVModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="TTTVModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="TTTVModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$DetailProvinces" EntityType="TTTVModel.Store.TTTV_$DetailProvinces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$Districts" EntityType="TTTVModel.Store.TTTV_$Districts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$GiayTo" EntityType="TTTVModel.Store.TTTV_$GiayTo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$HostStatus" EntityType="TTTVModel.Store.TTTV_$HostStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$LiDo" EntityType="TTTVModel.Store.TTTV_$LiDo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$Provinces" EntityType="TTTVModel.Store.TTTV_$Provinces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$QuocTich" EntityType="TTTVModel.Store.TTTV_$QuocTich" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$Roles" EntityType="TTTVModel.Store.TTTV_$Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$Status" EntityType="TTTVModel.Store.TTTV_$Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$TamTru" EntityType="TTTVModel.Store.TTTV_$TamTru" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$Type" EntityType="TTTVModel.Store.TTTV_$Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$UserInformation" EntityType="TTTVModel.Store.TTTV_$UserInformation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TTTV_$Users" EntityType="TTTVModel.Store.TTTV_$Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TTTV_$DetailAddress_TTTV_$Districts" Association="TTTVModel.Store.FK_TTTV_$DetailAddress_TTTV_$Districts">
+      <End Role="TTTV_$Districts" EntitySet="TTTV_$Districts" />
+      <End Role="TTTV_$DetailProvinces" EntitySet="TTTV_$DetailProvinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$DetailAddress_TTTV_$Provinces" Association="TTTVModel.Store.FK_TTTV_$DetailAddress_TTTV_$Provinces">
+      <End Role="TTTV_$Provinces" EntitySet="TTTV_$Provinces" />
+      <End Role="TTTV_$DetailProvinces" EntitySet="TTTV_$DetailProvinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$Districts_TTTV_$Provinces" Association="TTTVModel.Store.FK_TTTV_$Districts_TTTV_$Provinces">
+      <End Role="TTTV_$Provinces" EntitySet="TTTV_$Provinces" />
+      <End Role="TTTV_$Districts" EntitySet="TTTV_$Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$TamTru_TTTV_$GiayTo" Association="TTTVModel.Store.FK_TTTV_$TamTru_TTTV_$GiayTo">
+      <End Role="TTTV_$GiayTo" EntitySet="TTTV_$GiayTo" />
+      <End Role="TTTV_$TamTru" EntitySet="TTTV_$TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$TamTru_TTTV_$LiDo" Association="TTTVModel.Store.FK_TTTV_$TamTru_TTTV_$LiDo">
+      <End Role="TTTV_$LiDo" EntitySet="TTTV_$LiDo" />
+      <End Role="TTTV_$TamTru" EntitySet="TTTV_$TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$TamTru_TTTV_$QuocTich" Association="TTTVModel.Store.FK_TTTV_$TamTru_TTTV_$QuocTich">
+      <End Role="TTTV_$QuocTich" EntitySet="TTTV_$QuocTich" />
+      <End Role="TTTV_$TamTru" EntitySet="TTTV_$TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$TamTru_TTTV_$Status" Association="TTTVModel.Store.FK_TTTV_$TamTru_TTTV_$Status">
+      <End Role="TTTV_$Status" EntitySet="TTTV_$Status" />
+      <End Role="TTTV_$TamTru" EntitySet="TTTV_$TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$TamTru_TTTV_$Type" Association="TTTVModel.Store.FK_TTTV_$TamTru_TTTV_$Type">
+      <End Role="TTTV_$Type" EntitySet="TTTV_$Type" />
+      <End Role="TTTV_$TamTru" EntitySet="TTTV_$TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$TamTru_TTTV_$Users" Association="TTTVModel.Store.FK_TTTV_$TamTru_TTTV_$Users">
+      <End Role="TTTV_$Users" EntitySet="TTTV_$Users" />
+      <End Role="TTTV_$TamTru" EntitySet="TTTV_$TamTru" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$UserInformation_TTTV_$Users" Association="TTTVModel.Store.FK_TTTV_$UserInformation_TTTV_$Users">
+      <End Role="TTTV_$Users" EntitySet="TTTV_$Users" />
+      <End Role="TTTV_$UserInformation" EntitySet="TTTV_$UserInformation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TTTV_$Users_TTTV_$Roles" Association="TTTVModel.Store.FK_TTTV_$Users_TTTV_$Roles">
+      <End Role="TTTV_$Roles" EntitySet="TTTV_$Roles" />
+      <End Role="TTTV_$Users" EntitySet="TTTV_$Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TTTV_$DetailProvinces">
+    <Key>
+      <PropertyRef Name="DetailID" />
+      <PropertyRef Name="DistrictID" />
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="DetailID" Type="int" Nullable="false" />
+    <Property Name="DistrictID" Type="int" Nullable="false" />
+    <Property Name="ProvinceID" Type="int" Nullable="false" />
+    <Property Name="DetailName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TTTV_$Districts">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="DistrictID" Type="int" Nullable="false" />
+    <Property Name="ProvinceID" Type="int" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TTTV_$GiayTo">
+    <Key>
+      <PropertyRef Name="ID_GiayTo" />
+    </Key>
+    <Property Name="ID_GiayTo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GiayTo" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TTTV_$HostStatus">
+    <Key>
+      <PropertyRef Name="StatusKey" />
+    </Key>
+    <Property Name="StatusKey" Type="int" Nullable="false" />
+    <Property Name="StatusDescription" Type="bit" />
+    <Property Name="StatusLog" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TTTV_$LiDo">
+    <Key>
+      <PropertyRef Name="ID_LiDo" />
+    </Key>
+    <Property Name="ID_LiDo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LiDo" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TTTV_$Provinces">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="int" Nullable="false" />
+    <Property Name="ProvinceName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TTTV_$QuocTich">
+    <Key>
+      <PropertyRef Name="ID_QuocTich" />
+    </Key>
+    <Property Name="ID_QuocTich" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QuocTich" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TTTV_$Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+    <Property Name="RoleDescription" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TTTV_$Status">
+    <Key>
+      <PropertyRef Name="ID_Status" />
+    </Key>
+    <Property Name="ID_Status" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TTTV_$TamTru">
+    <Key>
+      <PropertyRef Name="ID_TamTru" />
+    </Key>
+    <Property Name="ID_TamTru" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Type" Type="int" />
+    <Property Name="ID_Status" Type="int" />
+    <Property Name="ID_GiayTo" Type="int" />
+    <Property Name="ID_LiDo" Type="int" />
+    <Property Name="ID_QuocTich" Type="int" />
+    <Property Name="TT_FullName" Type="nvarchar" MaxLength="255" />
+    <Property Name="TT_DiaChiThuongTru" Type="nvarchar" MaxLength="255" />
+    <Property Name="TT_NgayDen" Type="datetime" />
+    <Property Name="TT_NgayDi" Type="datetime" />
+    <Property Name="TT_DiaChiTamTru" Type="nvarchar" MaxLength="255" />
+    <Property Name="TT_Room" Type="nvarchar" MaxLength="20" />
+    <Property Name="TT_GiayTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="TaiKhoanDangKi" Type="nvarchar" MaxLength="50" />
+    <Property Name="TT_LiDoKhac" Type="nvarchar" MaxLength="255" />
+    <Property Name="ProvinceID" Type="int" />
+    <Property Name="DistrictID" Type="int" />
+    <Property Name="DetailProvinceID" Type="int" />
+  </EntityType>
+  <EntityType Name="TTTV_$Type">
+    <Key>
+      <PropertyRef Name="ID_Type" />
+    </Key>
+    <Property Name="ID_Type" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TTTV_$UserInformation">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="ProvinceID" />
+      <PropertyRef Name="ProvinceDetailID" />
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="BusinessCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="ProvinceID" Type="int" Nullable="false" />
+    <Property Name="ProvinceDetailID" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="SubAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="DistrictID" Type="int" Nullable="false" />
+    <Property Name="UserFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+  </EntityType>
+  <EntityType Name="TTTV_$Users">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" />
+    <Property Name="ForgotPassQuestion" Type="nvarchar" MaxLength="255" />
+    <Property Name="ForgotPassAnswer" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <Association Name="FK_TTTV_$DetailAddress_TTTV_$Districts">
+    <End Role="TTTV_$Districts" Type="TTTVModel.Store.TTTV_$Districts" Multiplicity="1" />
+    <End Role="TTTV_$DetailProvinces" Type="TTTVModel.Store.TTTV_$DetailProvinces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Districts">
+        <PropertyRef Name="DistrictID" />
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="TTTV_$DetailProvinces">
+        <PropertyRef Name="DistrictID" />
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$DetailAddress_TTTV_$Provinces">
+    <End Role="TTTV_$Provinces" Type="TTTVModel.Store.TTTV_$Provinces" Multiplicity="1" />
+    <End Role="TTTV_$DetailProvinces" Type="TTTVModel.Store.TTTV_$DetailProvinces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Provinces">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="TTTV_$DetailProvinces">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$Districts_TTTV_$Provinces">
+    <End Role="TTTV_$Provinces" Type="TTTVModel.Store.TTTV_$Provinces" Multiplicity="1" />
+    <End Role="TTTV_$Districts" Type="TTTVModel.Store.TTTV_$Districts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Provinces">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="TTTV_$Districts">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$TamTru_TTTV_$GiayTo">
+    <End Role="TTTV_$GiayTo" Type="TTTVModel.Store.TTTV_$GiayTo" Multiplicity="0..1" />
+    <End Role="TTTV_$TamTru" Type="TTTVModel.Store.TTTV_$TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$GiayTo">
+        <PropertyRef Name="ID_GiayTo" />
+      </Principal>
+      <Dependent Role="TTTV_$TamTru">
+        <PropertyRef Name="ID_GiayTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$TamTru_TTTV_$LiDo">
+    <End Role="TTTV_$LiDo" Type="TTTVModel.Store.TTTV_$LiDo" Multiplicity="0..1" />
+    <End Role="TTTV_$TamTru" Type="TTTVModel.Store.TTTV_$TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$LiDo">
+        <PropertyRef Name="ID_LiDo" />
+      </Principal>
+      <Dependent Role="TTTV_$TamTru">
+        <PropertyRef Name="ID_LiDo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$TamTru_TTTV_$QuocTich">
+    <End Role="TTTV_$QuocTich" Type="TTTVModel.Store.TTTV_$QuocTich" Multiplicity="0..1" />
+    <End Role="TTTV_$TamTru" Type="TTTVModel.Store.TTTV_$TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$QuocTich">
+        <PropertyRef Name="ID_QuocTich" />
+      </Principal>
+      <Dependent Role="TTTV_$TamTru">
+        <PropertyRef Name="ID_QuocTich" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$TamTru_TTTV_$Status">
+    <End Role="TTTV_$Status" Type="TTTVModel.Store.TTTV_$Status" Multiplicity="0..1" />
+    <End Role="TTTV_$TamTru" Type="TTTVModel.Store.TTTV_$TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Status">
+        <PropertyRef Name="ID_Status" />
+      </Principal>
+      <Dependent Role="TTTV_$TamTru">
+        <PropertyRef Name="ID_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$TamTru_TTTV_$Type">
+    <End Role="TTTV_$Type" Type="TTTVModel.Store.TTTV_$Type" Multiplicity="0..1" />
+    <End Role="TTTV_$TamTru" Type="TTTVModel.Store.TTTV_$TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Type">
+        <PropertyRef Name="ID_Type" />
+      </Principal>
+      <Dependent Role="TTTV_$TamTru">
+        <PropertyRef Name="ID_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$TamTru_TTTV_$Users">
+    <End Role="TTTV_$Users" Type="TTTVModel.Store.TTTV_$Users" Multiplicity="0..1" />
+    <End Role="TTTV_$TamTru" Type="TTTVModel.Store.TTTV_$TamTru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Users">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="TTTV_$TamTru">
+        <PropertyRef Name="TaiKhoanDangKi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$UserInformation_TTTV_$Users">
+    <End Role="TTTV_$Users" Type="TTTVModel.Store.TTTV_$Users" Multiplicity="1" />
+    <End Role="TTTV_$UserInformation" Type="TTTVModel.Store.TTTV_$UserInformation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Users">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="TTTV_$UserInformation">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TTTV_$Users_TTTV_$Roles">
+    <End Role="TTTV_$Roles" Type="TTTVModel.Store.TTTV_$Roles" Multiplicity="0..1" />
+    <End Role="TTTV_$Users" Type="TTTVModel.Store.TTTV_$Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTTV_$Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="TTTV_$Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

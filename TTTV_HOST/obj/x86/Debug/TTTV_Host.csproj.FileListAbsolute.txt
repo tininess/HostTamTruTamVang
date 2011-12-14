@@ -1,0 +1,10 @@
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\obj\x86\Debug\TTTV_Host.HostService.resources
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\obj\x86\Debug\TTTV_Host.Properties.Resources.resources
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\bin\Debug\TTTV_Host.exe.config
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\bin\Debug\TTTV_Host.exe
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\bin\Debug\TTTV_Host.pdb
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\obj\x86\Debug\TTTV_Host.exe
+c:\users\user\documents\visual studio 2010\Projects\TTTV_Host\TTTV_Host\obj\x86\Debug\TTTV_Host.pdb
